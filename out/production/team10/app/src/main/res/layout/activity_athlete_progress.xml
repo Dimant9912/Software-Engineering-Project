@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Καταγραφή Επίδοσης"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:textColor="#388E3C"/>
+
+    <EditText
+        android:id="@+id/etPerfExerciseId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID Άσκησης (π.χ. 1)"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:layout_marginBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/etPerfDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ημερομηνία (π.χ. 2023-12-20)"
+        android:minHeight="48dp"
+        android:layout_marginBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/etPerfCompetition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Διοργάνωση / Αγώνας"
+        android:minHeight="48dp"
+        android:layout_marginBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/etPerfResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Επίδοση (π.χ. 10.50s)"
+        android:minHeight="48dp"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btnSavePerformance"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ΑΠΟΘΗΚΕΥΣΗ ΚΑΙ ΠΡΟΒΟΛΗ"
+        android:backgroundTint="#4CAF50"/>
+
+    <TextView
+        android:id="@+id/tvProgressDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text=""
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:gravity="center"/>
+
+</LinearLayout>

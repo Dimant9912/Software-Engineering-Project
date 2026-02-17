@@ -1,0 +1,181 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > CoachMemoryDAO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: CoachMemoryDAO (com.example.tracknfieldapp.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CoachMemoryDAO</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83,3%
+  </span>
+  <span class="absValue">
+    (5/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.dao;
+&nbsp;
+&nbsp;import com.example.tracknfieldapp.domain.Coach;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Υλοποίηση του CoachDAO που αποθηκεύει τα δεδομένα στη μνήμη.
+&nbsp; */
+<b class="fc">&nbsp;public class CoachMemoryDAO implements CoachDAO {</b>
+<b class="fc">&nbsp;    private static List&lt;Coach&gt; coaches = new ArrayList&lt;&gt;();</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Αποθήκευση προπονητή στη λίστα ο οποίος δεν υπάρχει ήδη.
+&nbsp;     * 
+&nbsp;     * @param coach προπονητής για αποθήκευση.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void save(Coach coach) {
+<b class="pc">&nbsp;        if (findByEmail(coach.getEmail()) == null) {</b>
+<b class="fc">&nbsp;            coaches.add(coach);</b>
+&nbsp;        }
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Αναζήτηση προπονητή με βάση το email του, επιστρέφει τον προπονητή αν βρεθεί,
+&nbsp;     * αλλιώς null.
+&nbsp;     * 
+&nbsp;     * @param email email προπονητή που αναζητούμε.
+&nbsp;     * @return τον προπονητή αν βρεθεί, αλλιώς null
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public Coach findByEmail(String email) {
+<b class="fc">&nbsp;        for (Coach coach : coaches) {</b>
+<b class="fc">&nbsp;            if (coach.getEmail().equals(email)) {</b>
+<b class="fc">&nbsp;                return coach;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Διαγραφή προπονητή από την λίστα.
+&nbsp;     * 
+&nbsp;     * @param coach προπονητής προς διαγραφή.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void delete(Coach coach) {
+<b class="fc">&nbsp;        coaches.remove(coach);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει νέα λίσα με όλους τους προπονητές που έχουν αποθηκευτεί.
+&nbsp;     * 
+&nbsp;     * @return νέα λίστα με προπονητής που έχουν αποθηκευτεί.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;Coach&gt; findAll() {
+<b class="fc">&nbsp;        return new ArrayList&lt;&gt;(coaches);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>

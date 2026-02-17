@@ -1,0 +1,107 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > AthleteDAO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: AthleteDAO (com.example.tracknfieldapp.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">AthleteDAO</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.dao;
+&nbsp;
+&nbsp;import com.example.tracknfieldapp.domain.Athlete;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Διεπαφή για την πρόσβαση στα δεδομένα των αθλητών.
+&nbsp; */
+&nbsp;public interface AthleteDAO {
+&nbsp;    /**
+&nbsp;     * Αποθηκεύει έναν αθλητή.
+&nbsp;     * 
+&nbsp;     * @param athlete αθλητής που θα αποθηκευτεί.
+&nbsp;     */
+&nbsp;    void save(Athlete athlete);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Αναζητά αθλητή με βάση το email του.
+&nbsp;     * 
+&nbsp;     * @param email email αθλητή που αναζητάμε
+&nbsp;     *              Επιστρέφει τον αθλητή αν βρεθεί, αλλιώς null.
+&nbsp;     * @return τον αθλητή αν βρεθεί, αλλιώς null.
+&nbsp;     */
+&nbsp;    Athlete findByEmail(String email);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Διαγράφει έναν αθλητή.
+&nbsp;     * 
+&nbsp;     * @param athlete αθλητής για διαγραφή.
+&nbsp;     */
+&nbsp;    void delete(Athlete athlete);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει λίστα με όλους τους αθλητες που έχουν εγγραφεί.
+&nbsp;     * 
+&nbsp;     * @return λίστα με αθλητές που έχουν εγγραφεί.
+&nbsp;     */
+&nbsp;    List&lt;Athlete&gt; findAll();
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>

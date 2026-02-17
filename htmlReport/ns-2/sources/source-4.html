@@ -1,0 +1,177 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ExerciseTypeMemoryDAO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: ExerciseTypeMemoryDAO (com.example.tracknfieldapp.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ExerciseTypeMemoryDAO</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.dao;
+&nbsp;
+&nbsp;import com.example.tracknfieldapp.domain.ExerciseType;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Υλοποίηση του ExerciseTypeDAO που αποθηκεύει τα δεδομένα στη μνήμη.
+&nbsp; */
+<b class="fc">&nbsp;public class ExerciseTypeMemoryDAO implements ExerciseTypeDAO {</b>
+<b class="fc">&nbsp;    private static List&lt;ExerciseType&gt; types = new ArrayList&lt;&gt;();</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Αναζητά τύπο άσκησης βάση ονόματος και αν βρεθεί τον επιστρέφει, αλλιώς null.
+&nbsp;     * 
+&nbsp;     * @param name όνομα τύπου άσκησης.
+&nbsp;     * @return τύπο άσκησης αν βρεθεί, αλλιώς null.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public ExerciseType find(String name) {
+<b class="fc">&nbsp;        for (ExerciseType type : types) {</b>
+<b class="fc">&nbsp;            if (type.getTypeName().equalsIgnoreCase(name))</b>
+<b class="fc">&nbsp;                return type;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Προσθήκη νέου τύπου άσκησης.
+&nbsp;     * 
+&nbsp;     * @param type τύπος άσκησης που θα αποθηκευτεί.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void save(ExerciseType type) {
+<b class="fc">&nbsp;        types.add(type);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει λίστα με όλους τους τύπους ασκήσεων.
+&nbsp;     * 
+&nbsp;     * @return λίστα με όλους τους τύπους ασκήσεων.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;ExerciseType&gt; findAll() {
+<b class="fc">&nbsp;        return new ArrayList&lt;&gt;(types);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Διαγράφει έναν τύπο άσκησης.
+&nbsp;     * 
+&nbsp;     * @param type τύπος άσκησης για διαγραφή.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void delete(ExerciseType type) {
+<b class="fc">&nbsp;        types.remove(type);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>

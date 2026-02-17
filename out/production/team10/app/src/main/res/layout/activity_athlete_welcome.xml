@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#E8F5E9">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Καλώς ήρθες Αθλητή!"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="48dp"
+        android:textColor="#2E7D32"/>
+
+    <Button
+        android:id="@+id/btnAthleteLogin"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="ΕΧΩ ΛΟΓΑΡΙΑΣΜΟ (LOGIN)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnAthleteSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="ΕΙΜΑΙ ΝΕΟΣ / ΕΧΩ ΠΡΟΣΚΛΗΣΗ"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#8BC34A"/>
+
+    <Button
+        android:id="@+id/btnAthleteBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ΠΙΣΩ"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_marginTop="32dp"/>
+
+</LinearLayout>

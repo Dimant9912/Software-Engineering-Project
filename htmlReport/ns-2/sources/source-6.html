@@ -1,0 +1,180 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ScheduledTrainingMemoryDAO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: ScheduledTrainingMemoryDAO (com.example.tracknfieldapp.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ScheduledTrainingMemoryDAO</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.dao;
+&nbsp;
+&nbsp;import com.example.tracknfieldapp.domain.ScheduledTraining;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Υλοποίηση του ScheduledTrainingDAO που αποθηκεύει τα δεδομένα στη μνήμη.
+&nbsp; */
+<b class="fc">&nbsp;public class ScheduledTrainingMemoryDAO implements ScheduledTrainingDAO {</b>
+&nbsp;
+<b class="fc">&nbsp;    private static List&lt;ScheduledTraining&gt; trainings = new ArrayList&lt;&gt;();</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Προσθήκη νέας προγραμματισμένης προπόνησης.
+&nbsp;     * 
+&nbsp;     * @param training προπόνηση προς αποθήκευση.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void save(ScheduledTraining training) {
+<b class="fc">&nbsp;        trainings.add(training);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Διαγραφή μίας προγραμματισμένης προπόνησης.
+&nbsp;     * 
+&nbsp;     * @param training προπόνηση προς διαγραφή.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void delete(ScheduledTraining training) {
+<b class="fc">&nbsp;        trainings.remove(training);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει το σύνολο των προπονήσεων.
+&nbsp;     * 
+&nbsp;     * @return σύνολο των προπονήσεων.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;ScheduledTraining&gt; findAll() {
+<b class="fc">&nbsp;        return new ArrayList&lt;&gt;(trainings);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Αναζητά μέσω email όλες τις προπονήσεις ενός αθλητή και τις επιστρέφει.
+&nbsp;     * 
+&nbsp;     * @param email email αθλητή με βάση το οποίο γίνεται η αναζήτηση
+&nbsp;     * @return όλες οι προπονήσεις του αθλητή.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;ScheduledTraining&gt; findByAthlete(String email) {
+<b class="fc">&nbsp;        List&lt;ScheduledTraining&gt; result = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        for (ScheduledTraining t : trainings) {</b>
+<b class="fc">&nbsp;            if (t.getAthlete().getEmail().equalsIgnoreCase(email)) {</b>
+<b class="fc">&nbsp;                result.add(t);</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>

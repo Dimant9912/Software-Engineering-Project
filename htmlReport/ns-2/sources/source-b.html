@@ -1,0 +1,108 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ScheduledTrainingDAO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: ScheduledTrainingDAO (com.example.tracknfieldapp.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ScheduledTrainingDAO</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.dao;
+&nbsp;
+&nbsp;import com.example.tracknfieldapp.domain.ScheduledTraining;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Διεπαφή για την πρόσβαση στα δεδομένα των προγραμματισμένων προπονήσεων.
+&nbsp; */
+&nbsp;public interface ScheduledTrainingDAO {
+&nbsp;    /**
+&nbsp;     * Αποθηκεύει μια προγραμματισμένη προπόνηση.
+&nbsp;     * 
+&nbsp;     * @param scheduledTraining προγραμματισμένη προπόνηση προς αποθήκευση.
+&nbsp;     */
+&nbsp;    void save(ScheduledTraining scheduledTraining);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Διαγράφει μια προγραμματισμένη προπόνηση.
+&nbsp;     * 
+&nbsp;     * @param scheduledTraining προγραμματισμένη προπόνηση προς διαγραφή.
+&nbsp;     */
+&nbsp;    void delete(ScheduledTraining scheduledTraining);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει λίστα με όλες τις προγραμματισμένες προπονήσεις.
+&nbsp;     * 
+&nbsp;     * @return λίστα με όλες τις προγραμματισμένες προπονήσεις.
+&nbsp;     */
+&nbsp;    List&lt;ScheduledTraining&gt; findAll();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Αναζητά προπονήσεις με βάση το email του αθλητή και επιστρέφει λίστα με τις
+&nbsp;     * προπονήσεις του αθλητη.
+&nbsp;     * 
+&nbsp;     * @param email email αθλητή για τον οποίο ψάχνουμε τις προπονήσεις.
+&nbsp;     * @return λίστα με τις προπονήσεις του αθλητή.
+&nbsp;     * 
+&nbsp;     */
+&nbsp;    List&lt;ScheduledTraining&gt; findByAthlete(String email);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>

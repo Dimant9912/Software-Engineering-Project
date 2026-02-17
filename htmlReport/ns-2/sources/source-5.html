@@ -1,0 +1,177 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > InvitationMemoryDAO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: InvitationMemoryDAO (com.example.tracknfieldapp.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">InvitationMemoryDAO</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.dao;
+&nbsp;
+&nbsp;import com.example.tracknfieldapp.domain.Invitation;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Υλοποίηση του InvitationDAO που αποθηκεύει τα δεδομένα στη μνήμη.
+&nbsp; */
+<b class="fc">&nbsp;public class InvitationMemoryDAO implements InvitationDAO {</b>
+<b class="fc">&nbsp;    private static List&lt;Invitation&gt; invitations = new ArrayList&lt;&gt;();</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Προσθήκη νέας πρόσκλησης στη λίστα.
+&nbsp;     * 
+&nbsp;     * @param invitation πρόσκληση που θα αποθηκευτεί.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void save(Invitation invitation) {
+<b class="fc">&nbsp;        invitations.add(invitation);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Αναζήτηση πρόσκλησης βάση email αθλητή, αν βρεθεί την επιστρέφει αλλιώς null.
+&nbsp;     * 
+&nbsp;     * @param athleteEmail
+&nbsp;     * @return πρόσκληση αν βρεθεί, αλλιώς null.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public Invitation find(String athleteEmail) {
+<b class="fc">&nbsp;        for (Invitation invite : invitations) {</b>
+<b class="fc">&nbsp;            if (invite.getAthlete_email().equalsIgnoreCase(athleteEmail))</b>
+<b class="fc">&nbsp;                return invite;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Διαγραφή πρόσκλησης.
+&nbsp;     * 
+&nbsp;     * @param invitation πρόσκληση προς διαγραφή.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void delete(Invitation invitation) {
+<b class="fc">&nbsp;        invitations.remove(invitation);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστροφή όλων των προσκλήσεων που είναι αποθηκευμένες.
+&nbsp;     * 
+&nbsp;     * @return όλες τις αποθηκευμένες προσκλήσεις.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;Invitation&gt; findAll() {
+<b class="fc">&nbsp;        return new ArrayList&lt;&gt;(invitations);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>

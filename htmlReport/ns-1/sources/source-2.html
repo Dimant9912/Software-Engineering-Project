@@ -1,0 +1,212 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > WorkoutController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: WorkoutController (com.example.tracknfieldapp.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WorkoutController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (31/31)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.controller;
+&nbsp;
+&nbsp;import com.example.tracknfieldapp.ui.CompletedExercise;
+&nbsp;import com.example.tracknfieldapp.domain.Athlete;
+&nbsp;import com.example.tracknfieldapp.domain.Exercise;
+&nbsp;import com.example.tracknfieldapp.domain.Performance;
+&nbsp;import com.example.tracknfieldapp.domain.ScheduledTraining;
+&nbsp;
+&nbsp;/**
+&nbsp; * Ο WorkoutController διαχειρίζεται την εκτέλεση και την καταγραφή των
+&nbsp; * προπονήσεων.
+&nbsp; * Περιέχει μεθόδους για την καταγραφή αποτελεσμάτων ασκήσεων και τον υπολογισμό
+&nbsp; * της συνολικής επίδοσης του αθλητή.
+&nbsp; */
+<b class="fc">&nbsp;public class WorkoutController {</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Καταγράφει το αποτέλεσμα μιας συγκεκριμένης άσκησης μέσα σε μια προπόνηση.
+&nbsp;     * 
+&nbsp;     * @param training προπόνηση στην οποία ανήκει η άσκηση.
+&nbsp;     * @param exercise άσκηση που εκτελέστηκε.
+&nbsp;     * @param reps     επαναλήψεις που πραγματοποιήθηκαν.
+&nbsp;     * @param sets     σετ που πραγματοποιήθηκαν.
+&nbsp;     * @param time     χρόνος που χρειάστηκε να εκτελεστεί η ασκηση.
+&nbsp;     * @param dist     απόσταση που καλύφθηκε.
+&nbsp;     */
+&nbsp;    public void recordExerciseResult(ScheduledTraining training, Exercise exercise,
+&nbsp;            int reps, int sets, double time, double dist) {
+&nbsp;
+<b class="fc">&nbsp;        CompletedExercise c1 = new CompletedExercise(exercise, reps, sets, time, dist);</b>
+<b class="fc">&nbsp;        training.getCompletedExercises().add(c1);</b>
+&nbsp;
+<b class="fc">&nbsp;        if (c1.isCompleted()) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;Completed&quot;);</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            System.out.println(&quot;Exercise not completed&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Οριστικοποιεί την προπόνηση και εμφανίζει τα συγκεντρωτικά αποτελέσματα
+&nbsp;     * απόδοσης.
+&nbsp;     * 
+&nbsp;     * @param athlete αθλητής ο οποίος έχει ολοκληρώσει την προπόνηση.
+&nbsp;     */
+&nbsp;    public void finishWorkout(Athlete athlete) {
+<b class="fc">&nbsp;        Performance p = new Performance(athlete);</b>
+<b class="fc">&nbsp;        double score = p.SuccessRate();</b>
+&nbsp;
+<b class="fc">&nbsp;        System.out.println(&quot;\n--- RESULTS ---&quot;);</b>
+<b class="fc">&nbsp;        System.out.println(&quot;Athlete: &quot; + athlete.getFirst_name() + &quot; &quot; + athlete.getLast_name());</b>
+<b class="fc">&nbsp;        System.out.println(&quot;Total: &quot; + String.format(&quot;%.2f&quot;, score) + &quot;%&quot;);</b>
+<b class="fc">&nbsp;        System.out.println(&quot;Comment: &quot; + p.getPerformance() + &quot;\n&quot;);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Εκτυπώνει τις λεπτομέρειες της προπόνησης για κάθε μία άσκηση, συγκρίνοντας
+&nbsp;     * τους στόχους με τα αποτελέσματα.
+&nbsp;     * 
+&nbsp;     * @param training προπόνηση που θέλουμε να εκτυπώσουμε τις λεπτομέριες.
+&nbsp;     */
+&nbsp;    public void printWorkoutDetails(ScheduledTraining training) {
+<b class="fc">&nbsp;        for (Exercise e : training.getExercises()) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;Exercise : &quot; + e.getType());</b>
+<b class="fc">&nbsp;            CompletedExercise ce = findCompletedByExercise(training, e);</b>
+&nbsp;
+<b class="fc">&nbsp;            if (ce != null) {</b>
+<b class="fc">&nbsp;                System.out.println(&quot;Status : &quot; + (ce.isCompleted() ? &quot;\nDone&quot; : &quot;\nNot done&quot;));</b>
+<b class="fc">&nbsp;                System.out.println(&quot; \nReps difference: &quot; + ce.get_reps_difference());</b>
+<b class="fc">&nbsp;                System.out.println(&quot;\nTime difference : &quot; + ce.get_time_difference());</b>
+<b class="fc">&nbsp;                System.out.println(&quot;\nSets difference : &quot; + ce.get_reps_difference());</b>
+<b class="fc">&nbsp;                System.out.println(&quot;\nDistance difference: &quot; + ce.get_distance_difference());</b>
+&nbsp;            } else {
+<b class="fc">&nbsp;                System.out.println(&quot;Not even tried&quot; + &quot;\n&quot;);</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Αναζητά αν υπάρχει καταγεγραμμένο αποτέλεσμα για μια συγκεκριμένη άσκηση.
+&nbsp;     * 
+&nbsp;     * @param training προπόνηση με λίστα των ασκήσεων που έχουν ολοκληρωθεί.
+&nbsp;     * @param exercise άσκηση που αναζείται.
+&nbsp;     *                 ΕπιστρέφειΤο αντικείμενο CompletedExercise αν βρεθεί, αλλιώς
+&nbsp;     *                 null.
+&nbsp;     * @return αντικέιμενο CompleteExercise αν βρεθεί, αλλιώς null
+&nbsp;     */
+&nbsp;    private CompletedExercise findCompletedByExercise(ScheduledTraining training, Exercise exercise) {
+<b class="fc">&nbsp;        for (CompletedExercise ce : training.getCompletedExercises()) {</b>
+<b class="fc">&nbsp;            if (ce.getExercise().equals(exercise)) {</b>
+<b class="fc">&nbsp;                return ce;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>

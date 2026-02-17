@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > DAOFactory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: DAOFactory (com.example.tracknfieldapp.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DAOFactory</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (15/15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.dao;
+&nbsp;
+&nbsp;/**
+&nbsp; * Factory κλάση (Singleton) για τη δημιουργία και χρήση των DAO αντικειμένων.
+&nbsp; */
+&nbsp;public class DAOFactory {
+&nbsp;    private static DAOFactory instance;
+&nbsp;    private AthleteDAO athleteDAO;
+&nbsp;    private CoachDAO coachDAO;
+&nbsp;    private ExerciseTypeDAO exerciseTypeDAO;
+&nbsp;    private InvitationDAO invitationDAO;
+&nbsp;    private ScheduledTrainingDAO scheduledTrainingDAO;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Ιδιωτικός constructor
+&nbsp;     * Αρχικοποιεί τις υλοποιήσεις των DAO στη μνήμη.
+&nbsp;     */
+<b class="fc">&nbsp;    private DAOFactory() {</b>
+<b class="fc">&nbsp;        athleteDAO = new AthleteMemoryDAO();</b>
+<b class="fc">&nbsp;        coachDAO = new CoachMemoryDAO();</b>
+<b class="fc">&nbsp;        invitationDAO = new InvitationMemoryDAO();</b>
+<b class="fc">&nbsp;        scheduledTrainingDAO = new ScheduledTrainingMemoryDAO();</b>
+<b class="fc">&nbsp;        exerciseTypeDAO = new ExerciseTypeMemoryDAO();</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει το μοναδικό στιγμιότυπο του DAOFactory.
+&nbsp;     * 
+&nbsp;     * @return το μοναδικό στιγμυότυπο του DAOFactory.
+&nbsp;     */
+&nbsp;    public static synchronized DAOFactory getInstance() {
+<b class="pc">&nbsp;        if (instance == null) {</b>
+<b class="fc">&nbsp;            instance = new DAOFactory();</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return instance;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει το DAO για τους αθλητές.
+&nbsp;     * 
+&nbsp;     * @return το DAO για τους αθλητές.
+&nbsp;     */
+&nbsp;    public AthleteDAO getAthleteDAO() {
+<b class="fc">&nbsp;        return athleteDAO;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * ΕπιστρέφειΤο DAO για τους προπονητές.
+&nbsp;     * 
+&nbsp;     * @return το DAO για τους προπονητές.
+&nbsp;     */
+&nbsp;    public CoachDAO getCoachDAO() {
+<b class="fc">&nbsp;        return coachDAO;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει Το DAO για τις προσκλήσεις.
+&nbsp;     * 
+&nbsp;     * @return το DAO για τις προσκλήσεις.
+&nbsp;     */
+&nbsp;    public InvitationDAO getInvitationDAO() {
+<b class="fc">&nbsp;        return invitationDAO;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει Το DAO για τις προγραμματισμένες προπονήσεις.
+&nbsp;     * 
+&nbsp;     * @return το DAO για τις προγραμματισμένες προπονήσεις.
+&nbsp;     */
+&nbsp;    public ScheduledTrainingDAO getScheduledTrainingDAO() {
+<b class="fc">&nbsp;        return scheduledTrainingDAO;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει Το DAO για τους τύπους ασκήσεων.
+&nbsp;     * 
+&nbsp;     * @return το DAO για τους τύπους ασκήσεων.
+&nbsp;     */
+&nbsp;    public ExerciseTypeDAO getExerciseTypeDAO() {
+<b class="fc">&nbsp;        return exerciseTypeDAO;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>

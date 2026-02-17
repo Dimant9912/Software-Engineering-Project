@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Προσθήκη Άσκησης"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/etExerciseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Όνομα Άσκησης (π.χ. Squat)"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etSets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Αριθμός Sets"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etReps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Αριθμός Επαναλήψεων (Reps)"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etExerciseComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Σχόλια (π.χ. Ένιωσα κούραση)"
+        android:inputType="textLongMessage"
+        android:minHeight="48dp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnAddExercise"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ΑΠΟΘΗΚΕΥΣΗ ΑΣΚΗΣΗΣ"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnFinishExercise"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ΟΛΟΚΛΗΡΩΣΗ &amp; ΕΠΙΣΤΡΟΦΗ"
+        android:backgroundTint="#9E9E9E"/>
+
+</LinearLayout>

@@ -1,0 +1,228 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ProgramController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.tracknfieldapp.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: ProgramController (com.example.tracknfieldapp.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProgramController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (29/29)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.tracknfieldapp.controller;
+&nbsp;
+&nbsp;import com.example.tracknfieldapp.domain.Athlete;
+&nbsp;import com.example.tracknfieldapp.domain.Coach;
+&nbsp;import com.example.tracknfieldapp.domain.Invitation;
+&nbsp;import com.example.tracknfieldapp.domain.InvitationStatus;
+&nbsp;import com.example.tracknfieldapp.domain.ScheduledTraining;
+&nbsp;
+&nbsp;import java.time.LocalDate;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Ο ProgramController διαχειρίζεται τις λειτουργίες προγραμματισμού και
+&nbsp; * προσκλήσεων.
+&nbsp; * Είναι υπεύθυνος για την αποστολή προσκλήσεων από προπονητές σε αθλητές και
+&nbsp; * τον προγραμματισμό των προπονήσεων.
+&nbsp; */
+<b class="fc">&nbsp;public class ProgramController {</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Δημιουργεί μια πρόσκληση από έναν προπονητή προς έναν αθλητή.
+&nbsp;     * 
+&nbsp;     * @param coach        προπονητής που στέλνει την πρόσκληση.
+&nbsp;     * @param athleteEmail email αθλητή προς τον οποίο απευθύνεται η πρόσκληση.
+&nbsp;     *                     Επιστρέφεται Το αντικείμενο της πρόσκλησης που
+&nbsp;     *                     δημιουργήθηκε.
+&nbsp;     * @return το αντικείμενο της πρόσκλησης που δημιουργήθηκε.
+&nbsp;     */
+&nbsp;    public Invitation createInvitation(Coach coach, String athleteEmail) {
+<b class="fc">&nbsp;        Invitation invitation = coach.inviteAthlete(athleteEmail);</b>
+<b class="fc">&nbsp;        System.out.println(&quot;Invitation sent to  &quot; + athleteEmail +</b>
+<b class="fc">&nbsp;                &quot; with code: &quot; + invitation.getInvitationCode());</b>
+<b class="fc">&nbsp;        return invitation;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επεξεργάζεται την αποδοχή μιας πρόσκλησης και συνδέει τον αθλητή με τον
+&nbsp;     * προπονητή.
+&nbsp;     * 
+&nbsp;     * @param coach      προπονητής του αθλητή
+&nbsp;     * @param athlete    αθλητής που αποδέχεται την πρόσκληση
+&nbsp;     * @param invitation πρόσκληση (αντικείμενο) προς έλεγχο
+&nbsp;     *                   Επιστρεφει true αν η σύνδεση έγινε επιτυχώς, false σε
+&nbsp;     *                   αντίθετη περίπτωση.
+&nbsp;     * @return true αν η σύνδεση ολοκληρώθηκε επιτιχώς αλλιώς false
+&nbsp;     */
+&nbsp;    public boolean receiveInvitation(Coach coach, Athlete athlete, Invitation invitation) {
+<b class="fc">&nbsp;        if (invitation.getStatus() == InvitationStatus.ACCEPTED) {</b>
+<b class="fc">&nbsp;            return coach.addAthlete(athlete, invitation);</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            System.out.println(&quot;Receiving invitation failed. Status :  &quot; + invitation.getStatus());</b>
+<b class="fc">&nbsp;            return false;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Προγραμματίζει μια νέα προπόνηση για έναν συγκεκριμένο αθλητή.
+&nbsp;     * 
+&nbsp;     * @param athlete  αθλητής για τον οποίο προγραμματίζεται η προπόνηση.
+&nbsp;     * @param training προπόνηση
+&nbsp;     */
+&nbsp;    public void scheduleTraining(Athlete athlete, ScheduledTraining training) {
+<b class="fc">&nbsp;        training.setAthlete(athlete);</b>
+<b class="fc">&nbsp;        athlete.getScheduled_trainings().add(training);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Επιστρέφει όλες τις προγραμματισμένες προπονήσεις των αθλητών ενός προπονητή
+&nbsp;     * για μια συγκεκριμένη ημερομηνία.
+&nbsp;     * 
+&nbsp;     * @return όλες τις προγραμματισμένες προπονήσεις.
+&nbsp;     *         Επιστρεφει μια λίστα με τις προγραμματισμένες προπονήσεις της ημέρας.
+&nbsp;     * @return μία λίστα με τις προγραμματισμένες προπονήσεις της ημέρας
+&nbsp;     * @param coach προπονητής
+&nbsp;     * @param date  συγκεκριμένη ημερομηνία για την οποία ζητείται το πρόγραμμα
+&nbsp;     */
+&nbsp;    public List&lt;ScheduledTraining&gt; get_specific_day_scheduled_training(Coach coach, LocalDate date) {
+<b class="fc">&nbsp;        List&lt;ScheduledTraining&gt; specific_date_training = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="fc">&nbsp;        for (Athlete athlete : coach.getAthletes()) {</b>
+<b class="fc">&nbsp;            ScheduledTraining st = athlete.getTrainingByDate(date);</b>
+<b class="fc">&nbsp;            if (st != null) {</b>
+<b class="fc">&nbsp;                specific_date_training.add(st);</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return specific_date_training;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Εκτυπώνει μια αναφορά με τις προγραμματισμένες προπονήσεις των αθλητών για
+&nbsp;     * μια συγκεκριμένη ημέρα.
+&nbsp;     * 
+&nbsp;     * @param coach προπονητής που θέλει την αναφορά
+&nbsp;     * @param date  συγκεκριμένη ημερομηνία
+&nbsp;     */
+&nbsp;    public void printDailyReport(Coach coach, LocalDate date) {
+<b class="fc">&nbsp;        List&lt;ScheduledTraining&gt; s = get_specific_day_scheduled_training(coach, date);</b>
+&nbsp;
+<b class="fc">&nbsp;        System.out.println(&quot;\n=Specific Date Report :  &quot; + date + &quot; \n&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        if (s.isEmpty()) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;Δεν υπάρχει καμία προγραμματισμένη προπόνηση για κανέναν αθλητή.&quot;);</b>
+<b class="fc">&nbsp;            return;</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        for (ScheduledTraining st : s) {</b>
+<b class="fc">&nbsp;            String athleteName = st.getAthlete().getFirst_name() + &quot; &quot; + st.getAthlete().getLast_name();</b>
+<b class="fc">&nbsp;            System.out.println(&quot;Athlete: &quot; + athleteName);</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-29 19:49</div>
+</div>
+</body>
+</html>
