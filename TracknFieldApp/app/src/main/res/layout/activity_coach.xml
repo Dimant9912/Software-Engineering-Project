@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#FAFAFA">
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coach Dashboard"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="48dp"/>
+
+    <Button
+        android:id="@+id/btnInviteAthlete"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Προσκληση Αθλητη"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#4CAF50" 
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnCreateProgram"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Δημιουργια Προγραμματισμένης Προπόνησης"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnViewPrograms"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Ημερολόγιο Προπονήσεων"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnViewAthletes"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Οι Αθλητές μου"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnCoachLogout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="ΕΠΙΣΤΡΟΦΗ / LOGOUT"
+        android:textSize="14sp"
+        android:backgroundTint="#9E9E9E"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>

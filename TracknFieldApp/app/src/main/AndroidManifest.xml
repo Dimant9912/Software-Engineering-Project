@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tracknfieldapp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:targetApi="31">
+
+        <activity
+            android:name="com.example.tracknfieldapp.ui.WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.tracknfieldapp.ui.MainActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.CoachActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.AthleteActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.AthleteWelcomeActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.AthleteProgressActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.AthleteRegisterActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.LogWorkoutActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.CreateProgramActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.AddExerciseActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.RegisterActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.InviteAthleteActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.ViewProgramsActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.ProgramDetailsActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.ViewAthletesActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.AddScheduledTrainingActivity" />
+        <activity android:name="com.example.tracknfieldapp.ui.AthleteLoginActivity" />
+
+    </application>
+
+</manifest>

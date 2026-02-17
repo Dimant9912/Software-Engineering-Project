@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Πρόοδος Αθλητή"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"
+        android:textColor="#1B5E20"/>
+
+    <!-- Card για το Ποσοστό Επιτυχίας -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="20dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ποσοστό Ολοκλήρωσης"
+            android:textSize="16sp"
+            android:textColor="#757575"/>
+
+        <TextView
+            android:id="@+id/tvSuccessRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0%"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Card για τον Χαρακτηρισμό Επίδοσης -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="20dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Αξιολόγηση Επίδοσης"
+            android:textSize="16sp"
+            android:textColor="#757575"/>
+
+        <TextView
+            android:id="@+id/tvPerformanceComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#1976D2"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnUpdateProgress"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ΑΝΑΝΕΩΣΗ ΣΤΑΤΙΣΤΙΚΩΝ"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnBackFromProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ΕΠΙΣΤΡΟΦΗ"
+        android:backgroundTint="#9E9E9E"/>
+
+</LinearLayout>

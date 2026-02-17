@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#F0F4C3"> <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Είσοδος Αθλητή"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#33691E"
+        android:layout_marginBottom="48dp"/>
+
+    <EditText
+        android:id="@+id/etAthleteLoginEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Αθλητή"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etAthleteLoginPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Κωδικός"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnAthleteLoginConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ΣΥΝΔΕΣΗ"
+        android:backgroundTint="#2196F3"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvAthleteLoginError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Λάθος Email ή Κωδικός"
+        android:textColor="#D32F2F"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnAthleteLoginBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ΠΙΣΩ"
+        android:backgroundTint="#757575"
+        android:layout_marginTop="32dp"/>
+
+</LinearLayout>

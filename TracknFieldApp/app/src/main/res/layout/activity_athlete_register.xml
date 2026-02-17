@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Εγγραφή Αθλητή"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/etAthleteRegFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Όνομα"
+        android:minHeight="48dp"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etAthleteRegLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Επώνυμο"
+        android:minHeight="48dp"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etAthleteRegEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etAthleteRegPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Κωδικός"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etInviteCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Κωδικός Πρόσκλησης (π.χ. ABC12)"
+        android:backgroundTint="#FF9800"
+        android:minHeight="48dp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnAthleteRegisterConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Ολοκληρωση Εγγραφης"
+        android:backgroundTint="#4CAF50"/>
+
+    <Button
+        android:id="@+id/btnAthleteRegisterBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Πισω"
+        android:backgroundTint="#757575"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>

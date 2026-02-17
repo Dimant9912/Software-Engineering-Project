@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#F0F4C3">
+
+    <TextView
+        android:id="@+id/tvAthleteWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Καλώς ήρθες, Αθλητή!"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"
+        android:textColor="#33691E"/>
+
+    <Button
+        android:id="@+id/btnViewCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ΤΟ ΗΜΕΡΟΛΟΓΙΟ ΜΟΥ"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FF9800"/>
+
+    <Button
+        android:id="@+id/btnLogWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ΚΑΤΑΓΡΑΦΗ ΠΡΟΠΟΝΗΣΗΣ"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#2196F3"/>
+
+    <Button
+        android:id="@+id/btnPerformance"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Η ΠΡΟΟΔΟΣ ΜΟΥ"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#8BC34A"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Αποσύνδεση"
+        android:layout_marginTop="50dp"
+        style="@style/Widget.AppCompat.Button.Borderless"/>
+
+</LinearLayout>
