@@ -1,0 +1,93 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLActor</id><coordinates><x>690</x><y>70</y><w>60</w><h>110</h></coordinates><panel_attributes>Χρήστης</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>1370</x><y>140</y><w>60</w><h>110</h></coordinates><panel_attributes>Αθλητής</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>10</x><y>130</y><w>100</w><h>110</h></coordinates><panel_attributes>Προπονητής</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>120</y><w>660</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>640;20;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>130</y><w>680</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;660;10</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>120</y><w>320</w><h>370</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>300;343;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>120</y><w>460</w><h>160</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>440;135;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>120</y><w>390</w><h>270</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>370;250;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1010</x><y>130</y><w>410</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;100;390;10</additional_attributes></element><element><id>Relation</id><coordinates><x>990</x><y>130</y><w>430</w><h>330</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;310;410;10</additional_attributes></element><element><id>Relation</id><coordinates><x>980</x><y>130</y><w>440</w><h>230</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;210;420;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>490</x><y>220</y><w>280</w><h>70</h></coordinates><panel_attributes>Διαχείριση προγράμματος προπονήσεων</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>750</x><y>330</y><w>280</w><h>70</h></coordinates><panel_attributes>
+Διαχείριση Προφίλ Αθλητή
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>840</x><y>440</y><w>280</w><h>70</h></coordinates><panel_attributes>Καταγραφή προπονήσεων</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>780</x><y>220</y><w>280</w><h>70</h></coordinates><panel_attributes>
+Καταγραφή επιδόσεων
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>1070</x><y>40</y><w>280</w><h>70</h></coordinates><panel_attributes>Παρακολούθηση επιδόσεων</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>420</x><y>330</y><w>280</w><h>70</h></coordinates><panel_attributes>
+Εγγραφή προπονητή
+<<<<<<< HEAD
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>350</x>
+      <y>430</y>
+      <w>280</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Πρόσκληση Αθλητή</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>60</y>
+      <w>380</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>360.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1190</x>
+      <y>130</y>
+      <w>230</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;390.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>180</x>
+      <y>520</y>
+      <w>280</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Διαχείριση Προφίλ Προπονητή</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>390</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;includes&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>50</x>
+      <y>120</y>
+      <w>200</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;410.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1090</x>
+      <y>520</y>
+      <w>280</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Εγγραφή Αθλητή</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
+=======
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>350</x><y>430</y><w>280</w><h>70</h></coordinates><panel_attributes>Πρόσκληση Αθλητή</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>710</x><y>60</y><w>380</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>360;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1190</x><y>130</y><w>230</w><h>410</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;390;210;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>180</x><y>520</y><w>280</w><h>70</h></coordinates><panel_attributes>Διαχείριση Προφίλ Προπονητή</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>390</y><w>90</w><h>70</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;includes&gt;&gt;</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>120</y><w>200</w><h>430</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>180;410;10;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>1090</x><y>520</y><w>280</w><h>70</h></coordinates><panel_attributes>Εγγραφή Αθλητή</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+>>>>>>> 6d7f2b49b66550b290fc2fefc77c1675b697cda6

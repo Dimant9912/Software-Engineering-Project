@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>1220</x>
+      <y>220</y>
+      <w>80</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Αθλητής
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>660</x>
+      <y>270</y>
+      <w>100</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Προπονητής
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>790</x>
+      <y>30</y>
+      <w>270</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>ΔΙΑΓΡΑΜΜΑ ΠΕΡΙΠΤΩΣΕΩΝ ΧΡΗΣΗΣ
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>370</y>
+      <w>40</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1260</x>
+      <y>310</y>
+      <w>130</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;290.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>490</y>
+      <w>1040</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>1. Εγγραφή προπονητή  : καταγραφή των προσωπικών στοιχείων και  αθλήματος/αθλημάτων στα οποία ειδικεύεται.
+2.Ταυτοποίηση 
+3.Πρόσκληση Αθλητή : Ο προπονητής μπορεί να εγγράψει έναν ή περισσότερους αθλητές που προπονεί,στέλντοντας πρόσκληση στον αθλητή μεσω mail.
+4.Δημιουργία προγράμματος προπόνησης :  Κάθε προπονητής δημιουργεί πρόγραμμα προπονήσεων για κάθε αθλητή που επιβλέπει.
+ Το πρόγραμμα ορίζει ημερομηνίες προπονήσεων, ασκήσεις και τον μέγιστο/ελάχιστο αριθμό επαναλήψεων ανά άσκηση.
+5.Προβολή Προόδου και Επιδόσεων Αθλητών :  Μπορεί να βλέπει αναφορές για:
+      α)Την πρόοδο των αθλητών στις διάφορες ασκήσεις (αριθμός επαναλήψεων) 
+      β)Ποσοστιαία βελτίωση στη μέση επίδοση κάθε αθλητή ανά μήνα.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>600</y>
+      <w>320</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>1.Εγγραφή Αθλητή
+2.Εγγραφή και Ταυτοποίηση
+3.Καταγραφή Εκτελεσμένων Ασκήσεων
+4.Καταγραφή Προόδου
+5.Προβολή προωπικών επιδόσεων.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1030</x>
+      <y>130</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>190.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>140</y>
+      <w>100</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;80.0;10.0</additional_attributes>
+  </element>
+</diagram>

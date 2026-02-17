@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>56</y>
+      <w>200</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>/User/
+{abstract}
+--
+- id: int
+- email: String
+- password: String
+- firstName: String
+- lastName: String
+--
++ login(password: String): boolean
++ getEmail(): String
++ getFullName(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>232</y>
+      <w>240</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Coach
+--
+- specialty: Sport
+- athletes: Set&lt;Athlete&gt;
+--
++ inviteAthlete(email: String): void
++ createProgram(ath: Athlete): void
++ getAthletes(): Set&lt;Athlete&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>232</y>
+      <w>288</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Athlete
+--
+- inviteCode: String
+- birthDate: Date
+- programs: List&lt;TrainingProgram&gt;
+--
++ addProgram(prog: TrainingProgram): void
++ getActiveProgram(): TrainingProgram
++ addPerformance(perf: Performance): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>176</y>
+      <w>248</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>176</y>
+      <w>264</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>240</y>
+      <w>152</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Sport
+--
+- name: String
+--
++ getName(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>256</x>
+      <y>264</y>
+      <w>128</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>240</y>
+      <w>216</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Performance
+--
+- id: int
+- date: Date
+- competition: String
+- result: String
+--
++ getSport(): Sport</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1096</x>
+      <y>272</y>
+      <w>192</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>220.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>32</y>
+      <w>1232</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;260.0;10.0;20.0;1500.0;10.0;1500.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>400</y>
+      <w>304</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>TrainingProgram
+--
+- id: int
+- startDate: Date
+- endDate: Date
+- sessions: List&lt;ScheduledTraining&gt;
+--
++ addSession(s: ScheduledTraining): void
++ getSessionByDate(date: Date): ScheduledTraining</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>944</x>
+      <y>336</y>
+      <w>40</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>584</y>
+      <w>344</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>ScheduledTraining
+--
+- id: int
+- date: Date
+- exercises: List&lt;ProgramExercise&gt;
+--
++ addExercise(ex: ProgramExercise): void
++ getExercises(): List&lt;ProgramExercise&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>944</x>
+      <y>496</y>
+      <w>40</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1184</x>
+      <y>584</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>ProgramExercise
+--
+- id: int
+- type: ExerciseType
+- targetSets: int
+- targetReps: int
+--
++ getDetails(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1120</x>
+      <y>616</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1440</x>
+      <y>584</y>
+      <w>136</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ExerciseType
+--
+- name: String
+- description: String
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1368</x>
+      <y>608</y>
+      <w>88</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1184</x>
+      <y>744</y>
+      <w>192</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>CompletedExercise
+--
+- id: int
+- actualReps: int
+- comments: String
+- dateCompleted: Date
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1272</x>
+      <y>672</y>
+      <w>40</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>384</y>
+      <w>208</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Invitation
+--
+- code: String
+- email: String
+- date: Date
+- status: InvitationStatus
+--
++ isValid(): boolean
++ setStatus(s: InvitationStatus)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>328</y>
+      <w>56</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*
+m2=1
+creates</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>384</y>
+      <w>120</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+InvitationStatus
+--
+PENDING
+ACCEPTED
+EXPIRED
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>232</x>
+      <y>416</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>128</x>
+      <y>520</y>
+      <w>312</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ProgramController
+--
+--
++ getAthleteDetails(id: int): Athlete
++ createExercise(s: ScheduledTraining, ...): void
++ saveProgram(p: TrainingProgram): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>128</x>
+      <y>616</y>
+      <w>312</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>WorkoutController
+--
+--
++ getTodaysWorkout(athId: int): ScheduledTraining
++ recordReps(exId: int, reps: int): void
++ saveWorkout(s: ScheduledTraining): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>544</y>
+      <w>368</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;440.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>624</y>
+      <w>368</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;30.0;440.0;10.0</additional_attributes>
+  </element>
+</diagram>
