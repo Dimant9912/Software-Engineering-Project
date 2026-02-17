@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="el"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Coach.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">com.example.tracknfieldapp.domain</a> &gt; <span class="el_source">Coach.java</span></div><h1>Coach.java</h1><pre class="source lang-java linenums">package com.example.tracknfieldapp.domain;
+
+import java.time.LocalDate;
+import java.util.*;
+
+public class Coach extends User {
+
+
+    private Set&lt;Athlete&gt; athletes;//λίστα με τους αθλητές που επιβλέπει
+    private List&lt;Invitation&gt; SentInvitations;//ιστορικό προσκλήσεων
+    public Coach(int id, String email, String password, String firstname, String lastname,LocalDate BirthDate) {
+<span class="fc" id="L12">        super(id, email, password, firstname, lastname,BirthDate);</span>
+<span class="fc" id="L13">        this.athletes = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L14">        this.SentInvitations = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L15">    }</span>
+
+    public Set&lt;Athlete&gt; getAthletes() {
+<span class="fc" id="L18">        return athletes;</span>
+    }
+
+    public boolean addAthlete(Athlete athlete,Invitation invitation) {
+<span class="fc bfc" id="L22" title="All 6 branches covered.">        if (SentInvitations.contains(invitation) &amp;&amp; invitation.getAthlete_email().equals(athlete.getEmail()) &amp;&amp; invitation.getStatus() == InvitationStatus.ACCEPTED) {</span>
+<span class="fc" id="L23">            this.athletes.add(athlete);</span>
+<span class="fc" id="L24">            System.out.println(&quot;Athlete : &quot; + athlete.getFirst_name() + &quot; added successfully! &quot;);</span>
+<span class="fc" id="L25">            return true;</span>
+        }
+<span class="fc" id="L27">        System.out.println(&quot;Athlete did not added!!&quot;);</span>
+<span class="fc" id="L28">        return false;</span>
+    }
+
+    public Invitation inviteAthlete(String athleteEmail) {
+
+<span class="fc" id="L33">        Invitation newInvitation = new Invitation(athleteEmail);</span>
+
+        // Εδώ κανονικά θα έμπαινε ο κώδικας για την αποστολή email
+<span class="fc" id="L36">        System.out.println(&quot;Invitation sent to  &quot; + athleteEmail + &quot; with code :  &quot; + newInvitation.getInvitationCode());</span>
+<span class="fc" id="L37">        this.SentInvitations.add(newInvitation);</span>
+<span class="fc" id="L38">        return newInvitation;</span>
+    }
+
+    public  void newScheduledTraining(Athlete athlete,ScheduledTraining t){
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (this.athletes.contains(athlete))</span>
+<span class="fc" id="L43">        {athlete.addScheduledTraining(t);}</span>
+<span class="fc" id="L44">        else{System.out.println(&quot;Error , athlete : &quot; + athlete.getFirst_name()+ &quot;is not included in list&quot;);}</span>
+
+<span class="fc" id="L46">        athlete.addScheduledTraining(t);//το δημιουργεί ο προπονητης και προστίθεται στην λίστα του αθλητή.</span>
+<span class="fc" id="L47">    }</span>
+    public void getInvitationsReport(){
+<span class="fc" id="L49">        int accepted_invitations=0;</span>
+<span class="fc" id="L50">        int pending_invitations=0;</span>
+<span class="fc" id="L51">        int rejected_invitations=0;</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        for(Invitation i : SentInvitations)</span>
+        {
+<span class="fc bfc" id="L54" title="All 2 branches covered.">            if(i.getStatus()==InvitationStatus.ACCEPTED) accepted_invitations++;</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            else if(i.getStatus()==InvitationStatus.PENDING) pending_invitations++;</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">            else if(i.getStatus()==InvitationStatus.REJECTED) rejected_invitations++;</span>
+<span class="fc" id="L57">        }</span>
+<span class="fc" id="L58">        System.out.println(&quot;Accepted : &quot; + accepted_invitations);</span>
+<span class="fc" id="L59">        System.out.println(&quot;Pending : &quot; + pending_invitations);</span>
+<span class="fc" id="L60">        System.out.println(&quot;Rejected : &quot; + rejected_invitations);</span>
+<span class="fc" id="L61">    }</span>
+
+    public List&lt;ScheduledTraining&gt; getScheduledProgramsByDate(LocalDate date){
+<span class="fc" id="L64">        List&lt;ScheduledTraining&gt; specific_date_scheduled_programs=new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        for(Athlete a : athletes){</span>
+<span class="fc" id="L66">            ScheduledTraining s = a.getTrainingByDate(date);</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">            if (s!=null) {</span>
+<span class="fc" id="L68">                specific_date_scheduled_programs.add(s);}//αν ο αθλητης εχει προγραμμα εκεινη τη μερα προσθεσε το στη λιστα της συγκεκριμενης μερας.</span>
+
+<span class="fc" id="L70">        }</span>
+<span class="fc" id="L71">        return specific_date_scheduled_programs;</span>
+
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

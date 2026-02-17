@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="el"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Athlete.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">com.example.tracknfieldapp.domain</a> &gt; <span class="el_source">Athlete.java</span></div><h1>Athlete.java</h1><pre class="source lang-java linenums">package com.example.tracknfieldapp.domain;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.ArrayList;
+
+
+public class Athlete extends User {
+
+
+    private final Invitation invite;
+
+
+    private List&lt;ScheduledTraining&gt; scheduled_trainings;
+
+
+
+
+
+
+    public Athlete(int id, String email, String password, String firstname, String lastname, Invitation invite, LocalDate BirthDate) {
+<span class="fc" id="L21">        super(id, email, password, firstname, lastname, BirthDate);</span>
+<span class="fc" id="L22">        this.invite = invite;</span>
+<span class="fc" id="L23">        this.scheduled_trainings = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L24">    }</span>
+
+
+
+
+    public Invitation get_Invite() {
+<span class="fc" id="L30">        return invite;</span>
+    }
+
+    public void respondToInvitation(Invitation i, boolean accept) {
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (accept) {</span>
+<span class="fc" id="L35">            i.accept(); // Status : ACCEPTED</span>
+<span class="fc" id="L36">            System.out.println(&quot;Invitation accepted&quot;);</span>
+        } else {
+<span class="fc" id="L38">            i.reject(); //status : rejected</span>
+<span class="fc" id="L39">            System.out.println(&quot;Invitation rejected&quot;);</span>
+        }
+<span class="fc" id="L41">    }</span>
+
+
+
+    public List&lt;ScheduledTraining&gt; getScheduled_trainings() {
+<span class="fc" id="L46">        return scheduled_trainings;</span>
+    }
+
+
+    public void addScheduledTraining(ScheduledTraining scheduled_training) {
+<span class="fc" id="L51">        this.scheduled_trainings.add(scheduled_training);</span>
+<span class="fc" id="L52">    }</span>
+
+    public void removeScheduledTraining(ScheduledTraining scheduled_training) {
+<span class="fc" id="L55">        this.scheduled_trainings.remove(scheduled_training);</span>
+<span class="fc" id="L56">    }</span>
+    public ScheduledTraining getTrainingByDate(LocalDate date) {
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        for (ScheduledTraining training : this.scheduled_trainings) {</span>
+            // Η equals συγκρίνει μέρα, μήνα και έτος
+<span class="fc bfc" id="L60" title="All 2 branches covered.">            if (training.getDate().equals(date)) {</span>
+<span class="fc" id="L61">                return training;</span>
+            }
+<span class="fc" id="L63">        }</span>
+<span class="fc" id="L64">        return null; // Επιστρέφει null αν δεν υπάρχει προπόνηση εκείνη τη μέρα</span>
+    }
+
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

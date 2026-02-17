@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="el"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Performance.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">com.example.tracknfieldapp.domain</a> &gt; <span class="el_source">Performance.java</span></div><h1>Performance.java</h1><pre class="source lang-java linenums">package com.example.tracknfieldapp.domain;
+import com.example.tracknfieldapp.ui.CompletedExercise;
+
+import java.util.List;
+
+public class Performance {
+    private Athlete athlete;
+    private double athlete_performance;
+
+<span class="fc" id="L10">    public Performance(Athlete athlete){</span>
+<span class="fc" id="L11">        this.athlete_performance = 0;</span>
+<span class="fc" id="L12">        this.athlete = athlete;</span>
+<span class="fc" id="L13">    }</span>
+
+    public double SuccessRate(){
+<span class="fc" id="L16">        List&lt;ScheduledTraining&gt; allScheduledTrainings = athlete.getScheduled_trainings();</span>
+
+<span class="fc" id="L18">        int totalExercisesPlanned = 0;</span>
+<span class="fc" id="L19">        int totalExercisesCompleted= 0;</span>
+
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        if (allScheduledTrainings.isEmpty()) return 0.0;</span>
+
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (ScheduledTraining training : allScheduledTrainings) {</span>
+            // 1. Πόσες ασκήσεις ζήτησε ο προπονητής σε αυτή την προπόνηση
+<span class="fc" id="L25">            totalExercisesPlanned += training.getExercises().size();</span>
+
+            // 2. Πόσες από αυτές έχουν αντίστοιχη &quot;ολοκληρωμένη&quot; εγγραφή που πέτυχε
+            // Υποθέτουμε ότι η ScheduledTraining έχει τη λίστα getCompletedExercises()
+<span class="fc bfc" id="L29" title="All 2 branches covered.">            for (CompletedExercise ce : training.getCompletedExercises()) {</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">                if (ce.isCompleted()) {</span>
+<span class="fc" id="L31">                    totalExercisesCompleted++;</span>
+                }
+<span class="fc" id="L33">            }</span>
+<span class="fc" id="L34">        }</span>
+
+
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (totalExercisesPlanned == 0) return 0.0;</span>
+
+        // Υπολογισμός ποσοστού
+<span class="fc" id="L40">        this.athlete_performance = ((double) totalExercisesCompleted / totalExercisesPlanned) * 100;</span>
+
+<span class="fc" id="L42">        return this.athlete_performance;</span>
+    }
+
+
+    public String getPerformance() {
+<span class="fc" id="L47">        double rate = SuccessRate();</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (rate &gt;= 90) return &quot;Excellent&quot;;</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if (rate &gt;= 70) return &quot;Good&quot;;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (rate &gt;= 50) return &quot;Not good&quot;;</span>
+<span class="fc" id="L51">        return &quot;bad&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

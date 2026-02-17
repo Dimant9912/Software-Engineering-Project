@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>22</x>
+      <y>1397</y>
+      <w>220</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>// Class Element
+&lt;&lt;interface&gt;&gt;
+AthleteDAO
+--
+
+--
+save(athlete:Athlete):void
+delete(athlete:Athlete):void
+find(id:int):Athlete
+findAll():List&lt;Athlete&gt;
+customelement=
+// DB Symbol
+drawArc(5,5,26,8,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,5,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(5,9,26,15) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(5,9,5,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(31,9,31,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(5,10,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,15,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,20,26,8,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>374</x>
+      <y>1397</y>
+      <w>253</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>// Class Element
+&lt;&lt;interface&gt;&gt;
+CoachDAO
+--
+
+--
+save(coach:Coach):void
+delete(coach:Coach):void
+find(coach_id:int):Coach
+findAll():List&lt;Coach&gt; 
+
+customelement=
+// DB Symbol
+drawArc(5,5,26,8,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,5,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(5,9,26,15) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(5,9,5,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(31,9,31,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(5,10,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,15,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,20,26,8,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>1386</y>
+      <w>385</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>// Class Element
+&lt;&lt;interface&gt;&gt;
+ScheduledTrainingDAO
+--
+
+--
+save(scheduled_training:ScheduledTrining):void 
+delete(scheduled_training:ScheduledTraining):void 
+find(coach_id:int):ScheduledTraining 
+find(athlete_id:int):ScheduledTraining
+findAll():List&lt;ScheduledTraining&gt; 
+
+customelement=
+// DB Symbol
+drawArc(5,5,26,8,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,5,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(5,9,26,15) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(5,9,5,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(31,9,31,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(5,10,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,15,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,20,26,8,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1177</x>
+      <y>1419</y>
+      <w>330</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>// Class Element
+
+&lt;&lt;interface&gt;&gt;
+ExerciseTypeDAO
+--
+
+--
+find(exercise_type_name : string):ExerciseType
+save(exercise_type:ExerciseType):void
+delete(exercise_type:ExerciseType):void
+findAll():List&lt;ExerciseType&gt; 
+
+
+customelement=
+// DB Symbol
+drawArc(5,5,26,8,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,5,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(5,9,26,15) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(5,9,5,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(31,9,31,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(5,10,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,15,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,20,26,8,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>759</x>
+      <y>671</y>
+      <w>253</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>// Class Element
+&lt;&lt;interface&gt;&gt;
+DAO FACTORY
+
+customelement=
+// DB Symbol
+drawArc(5,5,26,8,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,5,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(5,9,26,15) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(5,9,5,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(31,9,31,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(5,10,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,15,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,20,26,8,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>429</x>
+      <y>506</y>
+      <w>242</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>ProgramController</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1716</y>
+      <w>264</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>AthleteDAOMemory
+--
+private static List&lt;Athlete&gt; athletes
+
+--
+save(athlete:Athlete)
+delete(athlete:Athlete)
+find(id:int) Athlete
+findAll(): List&lt;Athlete&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1133</x>
+      <y>495</y>
+      <w>231</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>WorkoutController</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>1716</y>
+      <w>264</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>CoachDAOMemory
+--
+private static List&lt;Coach&gt; coach
+
+--
+save(coach:Coach)
+delete(coach:Coach)
+find(id:int) Coach
+findAll(): List&lt;Coach&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>1716</y>
+      <w>440</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>ScheduledExerciseDAOMemory
+--
+private static List&lt;SceduledTraining&gt; scheduled_training
+--
+save(scheduled_training:ScheduledTraining)
+delete(scheduled_training:ScheduledTraining)
+find(id:int)ScheduledTraining
+findAll():List&lt;ScheduledTraining&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>1716</y>
+      <w>341</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>ExerciseTypeDAOMemory
+--
+private static List&lt;ExerciseType&gt; exercise_type
+--
+save(exercise_type:ExersiceType)
+delete(exercise_type:ExerciseType)
+find(exercise_type_name : String)
+findAll():List&lt;ExerciseType&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1595</x>
+      <y>1716</y>
+      <w>275</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>InvitationDAOMemory
+--
+private static List&lt;Invitation&gt; invitation
+--
+save(invitation:Invitation)
+delete(invitation:Invitation)
+find(athlete_mail:String)
+findAll():List&lt;Invitation&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>99</x>
+      <y>1529</y>
+      <w>33</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>429</x>
+      <y>1529</y>
+      <w>33</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>1540</y>
+      <w>33</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1342</x>
+      <y>1573</y>
+      <w>33</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1672</x>
+      <y>1595</y>
+      <w>33</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1617</x>
+      <y>1452</y>
+      <w>253</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>// Class Element
+&lt;&lt;interface&gt;&gt;
+InvitationDAO
+--
+
+--
+save(invitation:Invitation):void
+delete(invitation:Invitation):void
+findAll():List&lt;Invitation&gt; 
+find(athlete_email : string):Invitation
+customelement=
+// DB Symbol
+drawArc(5,5,26,8,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,5,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(5,9,26,15) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(5,9,5,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(31,9,31,24)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(5,10,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,15,26,8,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawArc(5,20,26,8,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>121</x>
+      <y>726</y>
+      <w>759</w>
+      <h>693</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;610.0;670.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>726</y>
+      <w>385</w>
+      <h>693</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;610.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>814</x>
+      <y>726</y>
+      <w>66</w>
+      <h>682</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;600.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>726</y>
+      <w>506</w>
+      <h>715</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>440.0;630.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>726</y>
+      <w>902</w>
+      <h>748</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>800.0;660.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>451</x>
+      <y>253</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Athlete
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>385</x>
+      <y>352</y>
+      <w>110</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Coach</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>352</y>
+      <w>187</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>ScheduledTraining</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1100</x>
+      <y>396</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Exercise</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>550</y>
+      <w>220</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>869</x>
+      <y>539</y>
+      <w>286</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>429</x>
+      <y>385</y>
+      <w>33</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>275</y>
+      <w>33</w>
+      <h>253</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>374</y>
+      <w>33</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1144</x>
+      <y>418</y>
+      <w>33</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>319</y>
+      <w>176</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>CompletedExercise</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1210</x>
+      <y>341</y>
+      <w>33</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1298</x>
+      <y>418</y>
+      <w>33</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1254</x>
+      <y>396</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Performance</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>792</x>
+      <y>0</y>
+      <w>341</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>
+--
+
+:UI
+
+Αναπαριστά συνολικά το επίπεδο διεπαφης
+athlete_activity,coach_acitivity κτλ
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>143</y>
+      <w>264</w>
+      <h>407</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;350.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>924</x>
+      <y>143</y>
+      <w>231</w>
+      <h>407</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>190.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1353</x>
+      <y>506</y>
+      <w>132</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1463</x>
+      <y>495</y>
+      <w>264</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>ScheduledExercise</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

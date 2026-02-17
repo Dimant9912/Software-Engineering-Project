@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="el"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProgramController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">com.example.tracknfieldapp.controller</a> &gt; <span class="el_source">ProgramController.java</span></div><h1>ProgramController.java</h1><pre class="source lang-java linenums">package com.example.tracknfieldapp.controller;
+
+import com.example.tracknfieldapp.domain.Athlete;
+import com.example.tracknfieldapp.domain.Coach;
+import com.example.tracknfieldapp.domain.Invitation;
+import com.example.tracknfieldapp.domain.InvitationStatus;
+import com.example.tracknfieldapp.domain.ScheduledTraining;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="fc" id="L13">public class ProgramController {</span>
+
+    public Invitation createInvitation(Coach coach, String athleteEmail) {
+<span class="fc" id="L16">        Invitation invitation = coach.inviteAthlete(athleteEmail);</span>
+<span class="fc" id="L17">        System.out.println(&quot;Invitation sent to  &quot; + athleteEmail +</span>
+<span class="fc" id="L18">                &quot; with code: &quot; + invitation.getInvitationCode());</span>
+<span class="fc" id="L19">        return invitation;</span>
+    }
+
+
+    public boolean receiveInvitation(Coach coach, Athlete athlete, Invitation invitation) {
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (invitation.getStatus() == InvitationStatus.ACCEPTED) {</span>
+<span class="fc" id="L25">            return coach.addAthlete(athlete, invitation);</span>
+        } else {
+<span class="fc" id="L27">            System.out.println(&quot;Receiving invitation failed. Status :  &quot; + invitation.getStatus());</span>
+<span class="fc" id="L28">            return false;</span>
+        }
+    }
+
+
+    public void scheduleTraining(Athlete athlete, ScheduledTraining training) {
+        // Σημαντικό: Θέτουμε τον αθλητή στην προπόνηση για να ξέρουμε σε ποιον ανήκει
+<span class="fc" id="L35">        training.setAthlete(athlete);</span>
+
+        // Προσθήκη στη λίστα του αθλητή
+<span class="fc" id="L38">        athlete.getScheduled_trainings().add(training);</span>
+
+
+<span class="fc" id="L41">    }</span>
+
+
+     // Επιστρέφει όλες τις προπονήσεις όλων των αθλητών ενός προπονητή για μια μέρα.
+
+    public List&lt;ScheduledTraining&gt; get_specific_day_scheduled_training(Coach coach, LocalDate date) {
+<span class="fc" id="L47">        List&lt;ScheduledTraining&gt; specific_date_training = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        for (Athlete athlete : coach.getAthletes()) {</span>
+<span class="fc" id="L50">            ScheduledTraining st = athlete.getTrainingByDate(date);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            if (st != null) {</span>
+<span class="fc" id="L52">                specific_date_training.add(st);</span>
+            }
+<span class="fc" id="L54">        }</span>
+<span class="fc" id="L55">        return specific_date_training;</span>
+    }
+
+    // --- ΕΚΤΥΠΩΣΕΙΣ / REPORTS ---
+
+    public void printDailyReport(Coach coach, LocalDate date) {
+<span class="fc" id="L61">        List&lt;ScheduledTraining&gt; s = get_specific_day_scheduled_training(coach, date);</span>
+
+<span class="fc" id="L63">        System.out.println(&quot;\n=Specific Date Report :  &quot; + date + &quot; \n&quot;);</span>
+
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (s.isEmpty()) {</span>
+<span class="fc" id="L66">            System.out.println(&quot;Δεν υπάρχει καμία προγραμματισμένη προπόνηση για κανέναν αθλητή.&quot;);</span>
+<span class="fc" id="L67">            return;</span>
+        }
+
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        for (ScheduledTraining st : s) {</span>
+            // Χρησιμοποιούμε τον getter που φτιάξαμε στην ScheduledTraining
+<span class="fc" id="L72">            String athleteName = st.getAthlete().getFirst_name() + &quot; &quot; + st.getAthlete().getLast_name();</span>
+<span class="fc" id="L73">            System.out.println(&quot;Athlete: &quot; + athleteName);</span>
+
+
+<span class="fc" id="L76">        }</span>
+
+<span class="fc" id="L78">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
